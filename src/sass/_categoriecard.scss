@@ -1,0 +1,55 @@
+.categoriecard {
+    margin-top: 5rem;
+    width: 15rem;
+    text-transform: uppercase;
+    text-align: center;
+
+    &__grid {
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+
+    &__container {
+        padding: 3rem;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+
+    }
+
+    &__img {
+        height: 25rem;
+    }
+
+    &__btn {
+        margin-right: 1rem;
+    }
+
+    &__returnbtn {
+        text-align: center;
+        padding: 1rem;
+
+        &-btn {
+            cursor: pointer;
+            border: none;
+            background-color: #541674;
+            color: white;
+            padding: 0.75rem 3rem;
+            font-weight: bold;
+            border-radius: 25px;
+        }
+    }
+
+    &__modal {
+        
+        &-img {
+            width: 95%;
+        }
+    }
+} 

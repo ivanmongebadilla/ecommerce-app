@@ -1,0 +1,80 @@
+.checkout {
+    &__form{
+        margin: 1rem 0;
+        height: 19rem;
+        overflow: auto;
+        padding: 1rem 1rem 0 1rem;
+    }
+
+    &__invalid {
+        color: #ca3e51;
+    }
+
+    &__control {
+        margin-bottom: 0.5rem;
+    }
+
+    &__control label {
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+
+    &__control input {
+        font: inherit;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 20rem;
+        max-width: 100%;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+
+        &-submit {
+            border: 1px solid $color-secondary;
+            background-color: $color-secondary;
+            color: white;
+            border-radius: 25px;
+            padding: 0.5rem 2rem;
+        }
+
+        &-cancel {
+            font: inherit;
+            color: $color-secondary;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            border-radius: 25px;
+            padding: 0.5rem 2rem; 
+        }
+
+        &-cancel:hover,
+        &-cancel:active {
+            background-color: #ffe6dc;
+        }
+
+        &-submit:hover,
+        &-submit:active {
+            background-color: $color-primary;
+        }
+    }
+
+    // &__actions button {
+    //     font: inherit;
+    //     color: #5a1a01;
+    //     cursor: pointer;
+    //     background-color: transparent;
+    //     border: none;
+    //     border-radius: 25px;
+    //     padding: 0.5rem 2rem; 
+    // }
+
+    // &__actions button:hover,
+    // button:active {
+    //     background-color: #ffe6dc;
+    // }
+}
+  
