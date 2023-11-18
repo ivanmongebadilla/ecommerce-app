@@ -1,5 +1,5 @@
 import '../../style/style.css';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import CartContext from '../../store/cart-context';
 import CartIcon from "../Cart/CartIcon";
 
@@ -7,6 +7,7 @@ const HeaderCartButton = (props) => {
     const[btnIsHighlited, setBtnIsHighlited] = useState(false)
     const cartCtx = useContext(CartContext);
     const { items } = cartCtx;
+    const isMounted = useRef(false)
 
     const numberOfCartItems = items.reduce((curNum, item) => {
         return curNum + item.amount;
@@ -14,19 +15,36 @@ const HeaderCartButton = (props) => {
 
     const btnClasses = `button ${btnIsHighlited ? 'bump' : ''}` 
 
+
     useEffect(() => {
-        if (items.length === 0) {
-            return;
+        if (isMounted.current) {
+            if (items.length === 0) {
+                return;
+            }
+            setBtnIsHighlited(true);
+    
+            const timer = setTimeout(() => {
+                setBtnIsHighlited(false)
+            }, 300);
+    
+            return () => {
+                clearTimeout(timer);
+            };
+        } else {
+            isMounted.current = true;
         }
-        setBtnIsHighlited(true);
+        // if (items.length === 0) {
+        //     return;
+        // }
+        // setBtnIsHighlited(true);
 
-        const timer = setTimeout(() => {
-            setBtnIsHighlited(false)
-        }, 300);
+        // const timer = setTimeout(() => {
+        //     setBtnIsHighlited(false)
+        // }, 300);
 
-        return () => {
-            clearTimeout(timer);
-        };
+        // return () => {
+        //     clearTimeout(timer);
+        // };
     }, [items]);
 
     return (
@@ -34,7 +52,7 @@ const HeaderCartButton = (props) => {
             <span className='icon'>
                 <CartIcon />
             </span>
-            <span>
+            <span className='icon__text'>
                 Your Cart
             </span>
             <span className='badge'>
