@@ -6,7 +6,7 @@ import React, { useContext, useState } from 'react';
 import CartItem from './CartItem';
 import Checkout from './Checkout';
 
-const url = 'http://localhost:3000/orders';
+const url = 'https://ecommerce-json-server-he9x.onrender.com/orders';
 
 const Cart = props => {
     const [ordered, setOrdered] = useState(false)
