@@ -11,9 +11,9 @@ const CategorieCard = (props) => {
                 <CardBody>
                     <CardTitle>{props.categorie}</CardTitle>
                     {/* <CardText>Some text for the card</CardText> */}
-                    <Button outline color="primary">
-                        <Link to={props.categorie}>Search</Link>
-                    </Button>
+                    <Link to={props.categorie}>
+                        <Button className='categoriecard__button'>Search</Button>
+                    </Link>
                 </CardBody>
             </Card>
         </div>
