@@ -45,7 +45,9 @@ const SearchPage = () => {
                 {content}
             </div>
             <div className="categoriecard__returnbtn">
-                <button className="categoriecard__returnbtn-btn"><Link to="/">Return to Main Page</Link></button>
+                <Link to="/">
+                    <button className="categoriecard__returnbtn-btn">Return to Main Page</button>
+                </Link>
             </div>
         </main>
     )
